@@ -8,6 +8,22 @@ var key8 = new Array("t", "u", "v", "ш", "щ", "ъ", "ы");
 var key9 = new Array("w", "x", "y", "z", "ь", "э", "ю", "я");
 var search = "";
 
+function setInputSelection(input, startPos, endPos) {
+        if (typeof input.selectionStart != "undefined") {
+            input.selectionStart = startPos;
+            input.selectionEnd = endPos;
+        } else if (document.selection && document.selection.createRange) {
+            // IE branch
+            input.focus();
+            input.select();
+            var range = document.selection.createRange();
+            range.collapse(true);
+            range.moveEnd("character", endPos);
+            range.moveStart("character", startPos);
+            range.select();
+        }
+
+    }
 
 var indexKeys = { "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0 };
 
@@ -33,9 +49,13 @@ var increaseIndex = function (arr, key) {
 window.onkeydown = function () {
 	var code = window.event.keyCode;
 	var s = document.getElementById('search');
-
+	console.log(code);
 
 	switch (code) {
+		case 49:
+			s.setSelectionRange(0, 3);
+			s.focus();
+			break;
 		case 50:
 			search = search + key2[indexKeys["2"]];
 			increaseIndex(key2, "2");
@@ -69,6 +89,6 @@ window.onkeydown = function () {
 			increaseIndex(key9, "9");
 			break;
 	}
-	s.value = search;
+	s.html(search);
 	return false;
 };
