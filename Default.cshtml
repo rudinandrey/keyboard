@@ -1,16 +1,51 @@
 ﻿@{
-    
 }
 
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
 		<script src="keyboard.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <input type="text" name="search" id="search">
-    </body>
+		<style>
+	  td {
+			text-align: center;
+			border: 1px solid gray;
+			border-radius: 5px;
+	  }
+	  #search {
+		  border: 1px solid black;
+			padding: 3px;
+			width: 100px;
+		}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="serach" id="search">
+		<br />
+		<br />
+		<br />
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2<br />ABC<br />АБВГ</td>
+				<td>3<br />DEF<br />ДЕЖЗ</td>
+			</tr>
+			<tr>
+				<td>4<br />GHI<br />ИЙКЛ</td>
+				<td>5<br />JKL<br />МНОП</td>
+				<td>6<br />MNO<br />РСТУ</td>
+			</tr>
+			<tr>
+				<td>7<br />PQRS<br />ФХЦЧ</td>
+				<td>8<br />TUV<br />ШЩЪЫ</td>
+				<td>9<br />WXYZ<br />ЬЭЮЯ</td>
+			</tr>
+			<tr>
+				<td>&nbsp;<br />&nbsp;<br />&nbsp;</td>
+				<td>9<br />_<br />&nbsp;</td>
+				<td>&nbsp;<br />&nbsp;<br />&nbsp;</td>
+			</tr>
+		</table>
+	</body>
 </html>
